@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         mWindowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         mDisplay = mWindowManager.getDefaultDisplay();
         mGameView = new GameView(this);
-        mGameView.setBackgroundResource(R.drawable.wood);
+        mGameView.setBackgroundResource(R.drawable.woodz);
         setContentView(mGameView);
     }
 

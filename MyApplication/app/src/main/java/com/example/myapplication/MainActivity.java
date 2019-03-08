@@ -1,4 +1,3 @@
-
 package com.example.myapplication;
 
 
@@ -17,7 +16,6 @@ import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.Display;
-import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +58,7 @@ public class MainActivity extends Activity {
         private final int mDstWidth;
         private final int mDstHeight;
 
-        private Sensor mGravity;
+        private Sensor mGyroscope;
         private long mLastT;
         private float mXDpi;
         private float mYDpi;
@@ -168,7 +166,7 @@ public class MainActivity extends Activity {
         }
 
         public void startSimulation() {
-            mSensorManager.registerListener(this, mGravity, SensorManager.SENSOR_DELAY_GAME);
+            mSensorManager.registerListener(this, mGyroscope, SensorManager.SENSOR_DELAY_GAME);
         }
 
         public void stopSimulation() {
@@ -177,7 +175,7 @@ public class MainActivity extends Activity {
 
         public Spinner(Context context) {
             super(context);
-            mGravity = mSensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+            mGyroscope = mSensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
 
             DisplayMetrics metrics = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(metrics);
