@@ -1,35 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textX"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="" />
-    <TextView
-        android:id="@+id/textY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
-        android:textSize="30sp"
-        android:text="" />
-    <TextView
-        android:id="@+id/textZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
-        android:textSize="30sp"
-        android:text="" />
-    <ImageView
-        android:id="@+id/view1"
-        android:layout_width="22mm"
+    <Button
+        android:id="@+id/imageButtonSelector"
+        android:layout_width="20mm"
         android:layout_height="20mm"
-        android:adjustViewBounds="true"
-        android:src="@drawable/rrr"
-         />
+        android:layout_marginBottom="260dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginHorizontal="120dp"
+        android:background="@drawable/ball" />
+
 </LinearLayout>
