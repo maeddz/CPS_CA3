@@ -1,12 +1,11 @@
 package com.example.gravity;
-
-
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.BitmapFactory.Options;
+import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -14,6 +13,7 @@ import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.widget.Toast;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Surface;
@@ -21,7 +21,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-
+import android.widget.Button;
+import android.view.View.OnClickListener;
 
 public class MainActivity extends Activity {
 
@@ -29,6 +30,7 @@ public class MainActivity extends Activity {
     private SensorManager mSensorManager;
     private WindowManager mWindowManager;
     private Display mDisplay;
+    Button imageButton;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +38,21 @@ public class MainActivity extends Activity {
         mWindowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         mDisplay = mWindowManager.getDefaultDisplay();
         mGameView = new GameView(this);
-        mGameView.setBackgroundResource(R.drawable.wood);
-        setContentView(mGameView);
+        // mGameView.setBackgroundResource(R.drawable.wood);
+        //setContentView(mGameView);
+        setContentView(R.layout.activity_main);
+        Toast.makeText(this, "Click on Ball to play!:))", Toast.LENGTH_SHORT).show();
+        addListenerOnButton();
+    }
+    public void addListenerOnButton() {
+        imageButton = (Button) findViewById(R.id.imageButtonSelector);
+        imageButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                mGameView.setBackgroundResource(R.drawable.wood);
+                setContentView(mGameView);
+            }
+        });
     }
 
     @Override
