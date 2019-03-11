@@ -121,17 +121,17 @@ public class MainActivity extends Activity {
                 final float y = mPosY;
                 if (x > xmax) {
                     mPosX = xmax;
-                    mVelX = -mVelX*0.5f;
+                    mVelX = 0;
                 } else if (x < -xmax) {
                     mPosX = -xmax;
-                    mVelX = -mVelX*0.5f;
+                    mVelX = 0;
                 }
                 if (y > ymax) {
                     mPosY = ymax;
-                    mVelY = -mVelY*0.5f;
+                    mVelY = 0;
                 } else if (y < -ymax) {
                     mPosY = -ymax;
-                    mVelY = -mVelX*0.5f;
+                    mVelY = 0;
                 }
             }
         }
@@ -222,10 +222,10 @@ public class MainActivity extends Activity {
         protected void onDraw(Canvas canvas) {
             final ParticleSystem particleSystem = mParticleSystem;
             final long now = System.currentTimeMillis();
-            final float wx = mSensorX;
-            final float wy = mSensorY;
+            final float wX = mSensorX;
+            final float wY = mSensorY;
 
-            particleSystem.update((int) wx, (int) wy, now);
+            particleSystem.update((int) wX, (int) wY, now);
 
             final float xc = mXOrigin;
             final float yc = mYOrigin;
